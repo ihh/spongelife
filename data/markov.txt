@@ -1,0 +1,14 @@
+>Born # # ~age
+$age=0 You are born.
+
+>One # age1 # ~age
+You are one.
+
+>Two # age2 # ~age
+You are two.
+
+>Child # child # ~age
+You are $age.
+
+>Adult # adult # ~age
+You are $age.
