@@ -1,26 +1,20 @@
->Born # # ~age
+>Born # root !dead # ~age
 ~born You are born.
 
->One # age1 # ~age
-You are one.
+>Birthday # minor adult senior # ~age
+~birthday
 
->Two # age2 # ~age
-You are two.
+>Pizza restaurant # unemployed +twenties # ~age
+You get a job as a prep cook at a &~career{[pizza|falafel|noodle] restaurant}{prep-cook line-cook head-cook}$career.
 
->Child # child # ~age
-You are $age.
+>Promotion # restaurant +promotion # ~age
+You work hard in the $career kitchen, and are promoted. ~promoted
 
->Adult # adult # ~age
-You are $age.
+>Restaurant # restaurant # ~age
+You work hard at the $career.
 
->Pizza restaurant # unemployed # ~age
-You get a job as a prep cook at a pizza restaurant. &~career{pizza}{prep-cook line-cook head-cook}
-
->Pizza restaurant # pizza-promotion # ~age
-You work hard at the pizza restaurant, and are promoted. ~promoted
-
->Pizza restaurant # pizza # ~age
-You work hard at the pizza restaurant.
+>Fired! # restaurant # ~age
+You offend the $career owner, and are fired. ~career_end
 
 >Prep cook # prep-cook # ~age
 You work hard as a prep cook, and are promoted. ~promoted
@@ -30,3 +24,70 @@ You work hard as a line cook, and are promoted. ~promoted
 
 >Retirement # sixties seventies !retired # ~age
 You retire. ~retired
+
+
+
+
+>Dating # single !child # $status=dating ~age
+You go on a date.
+
+>Single # dating # $status=single ~age
+Dating bores you.
+
+>Relationship # dating # $status=relationship ~age
+You're in a relationship.
+
+>Single # relationship # $status=[single|grieving] ~age
+You break up.
+
+>Engaged # relationship !minor # $status=engaged ~age
+You're engaged to be married!
+
+>Single # engaged # $status=single ~age
+The engagement breaks off.
+
+>Married # engaged !unemployed # $status=married ~age
+The wedding is spectacular.
+
+>Strife # married # $status=[married|divorcing] ~age
+You begin an affair.
+You argue with your spouse.
+
+>Reconciled # divorcing # $status=married ~age
+You reconcile with your spouse.
+
+>Divorced # divorcing # $status=[grieving|single] ~age
+You are divorced.
+
+>Bereaved # married # $status=grieving ~age
+Your spouse dies.
+
+>Grieving # grieving # $status=single ~age
+You grieve, and move on.
+
+>Celibate # single grieving !child !senior # $status=celibate ~age
+You decide to become celibate.
+
+>Not celibate # celibate !senior # $status=single ~age
+Your period of celibacy is over.
+
+
+>Baby # married +fertile # ~new_child ~age
+You have a baby!
+
+>Parenting # childcare # ~age
+You parent your ~random_child_age-year-old.
+
+>Grown # grownup # ~exit_child ~age
+Your child leaves home.
+
+
+
+>Cancer # cancer !diagnosed-cancer # ~age
+You are diagnosed with cancer. &push$injuries{diagnosed-cancer}
+
+>Recovery # diagnosed-cancer !senior # ~age
+You recover from cancer. &~recover_from_injury{cancer}
+
+>Dead # epitaph # 
+$epitaph

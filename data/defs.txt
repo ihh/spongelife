@@ -1,23 +1,32 @@
->born # root
-$age=0
+>born
+$age=0 $status=single
 
 >age
-age$age:=&add{1}$age ~age_tag ~school_tag ~job_tag ~family_tag
+~older ~next
+
+>older
+$age=&add{1}$age ~update_health
+
+>next
+&if&and$death&geq$age$death{epitaph}{~age_tag ~school_tag ~job_tag ~family_tag ~health_tag}
+
+>birthday
+You are [$age|&add{zero}$age][|| [today|years [old|old|old|old|young]]][||| and [counting|still [alive|breathing|going]]].
 
 >age_tag
-&if&lt$age{18}{child}{adult} &if&lt$age{2}{baby infant}&if&lt$age{4}{toddler infant}&if&lt$age{10}{young-child}&if&lt$age{13}{preteen}&if&lt$age{20}{teen}&if&lt$age{30}{twenties}&if&lt$age{40}{thirties}&if&lt$age{50}{forties middle-age}&if&lt$age{60}{fifties middle-age}&if&lt$age{70}{sixties old}{old}
+age$age &if&lt$age{18}{minor}&if&lt$age{75}{adult}{senior} &if&lt$age{2}{baby infant child}&if&lt$age{4}{toddler infant child}&if&lt$age{10}{child}&if&lt$age{13}{preteen}&if&lt$age{20}{teen}&if&lt$age{30}{twenties}&if&lt$age{40}{thirties}&if&lt$age{50}{forties}&if&lt$age{60}{fifties}&if&lt$age{70}{sixties}
 
 >school_tag
-&if&lt$age{2}{}&if&lt$age{5}{preschool}&if&eq$age{5}{kindergarten}&if&lt$age{18}{grade&subtract$age{5} &if&lt$age{10}{elem-school elementary-school}&if&lt$age{13}{middle-school}{high-school}}
+&if&lt$age{2}{}&if&lt$age{5}{preschool}&if&eq$age{5}{kindergarten}&if&lt$age{18}{grade&subtract$age{5} &if&lt$age{10}{elementary}&if&lt$age{13}{middle}{high}}
 
 >job_tag
-$career_tag &if&gt&length$career_jobs{1}{${career_tag}-promotion} &if$career_jobs&first$career_jobs&if&lt$age{18}{dependent}&if$retired{retired}{unemployed}
+$career &if&gt&length$career_jobs{1}{promotion} &if$career_jobs&first$career_jobs&if&lt$age{18}{dependent}&if$retired{retired}{unemployed}
 
 >career
-$career_tag=$$1 $career_jobs=&split$$2
+$career=$$1 $career_jobs=&split$$2
 
 >career_end
-$career_tag={} $career_jobs={}
+$career={} $career_jobs={}
 
 >promoted
 &if&gt&length$career_jobs{1}{$career_jobs=&notfirst$career_jobs}
@@ -26,4 +35,43 @@ $career_tag={} $career_jobs={}
 ~career_end $retired=1
 
 >family_tag
-$spouse &if$kids{&if&gt&length$kids{1}{parent kids ${kids}kids}{kids kid}}
+$status &if$age_born{parent} &if$dep_born{&if&gt{~oldest_dependent_age}{17}{grownup}{childcare}}
+
+>new_child
+&push$age_born$age &push$dep_born$age
+
+>exit_child
+&pop$dep_born
+
+>oldest_dependent_age
+&if$dep_born&subtract$age&first$dep_born
+
+>random_child_age
+&if$age_born&subtract$age&first&shuffle$age_born
+
+>health_tag
+&if$death{dying} &if$injuries{&join$injuries}{&if&not$death{healthy}} &if&and&gt$age{13}&lt$age{50}{fertile}
+
+>strip
+
+
+>new_injury
+&push$injuries$$1
+
+>got_injury
+&filter$injury:$injuries{&match/$$1/{$injury}}
+
+>recover_from_injury
+$injuries=&filter$item:$injuries{&not&match/$$1/{$item}}
+
+>update_health
+&if{&~got_injury{cancer}}{GOT_CANCER [||~advance_cancer]}{&if{&gt$age{45}}{&prob{0.2}{GETTING_CANCER ~get_cancer}{NO_CANCER}}{TOO_YOUNG_FOR_CANCER}}
+
+>get_cancer
+&push$injuries{cancer}
+
+>advance_cancer
+&if&and&not$death&~got_injury{cancer}{||&~die_of_cancer{[2|3|3|3|4|5]}}
+
+>die_of_cancer
+$death=&add{$$1}$age $epitaph={You died of cancer at age $death.}
