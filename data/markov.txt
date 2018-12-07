@@ -1,5 +1,5 @@
 >Born # # ~age
-$age=0 You are born.
+~born You are born.
 
 >One # age1 # ~age
 You are one.
@@ -12,3 +12,21 @@ You are $age.
 
 >Adult # adult # ~age
 You are $age.
+
+>Pizza restaurant # unemployed # ~age
+You get a job as a prep cook at a pizza restaurant. &~career{pizza}{prep-cook line-cook head-cook}
+
+>Pizza restaurant # pizza-promotion # ~age
+You work hard at the pizza restaurant, and are promoted. ~promoted
+
+>Pizza restaurant # pizza # ~age
+You work hard at the pizza restaurant.
+
+>Prep cook # prep-cook # ~age
+You work hard as a prep cook, and are promoted. ~promoted
+
+>Line cook # line-cook # ~age
+You work hard as a line cook, and are promoted. ~promoted
+
+>Retirement # sixties seventies !retired # ~age
+You retire. ~retired
