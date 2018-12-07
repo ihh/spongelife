@@ -86,7 +86,7 @@ Your child leaves home.
 >Cancer # cancer !diagnosed-cancer # ~age
 You are diagnosed with cancer. &push$injuries{diagnosed-cancer}
 
->Recovery # diagnosed-cancer !senior # ~age
+>Recovery # diagnosed-cancer !dying !senior # ~age
 You recover from cancer. &~recover_from_injury{cancer}
 
 >Dead # epitaph # 

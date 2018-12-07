@@ -52,20 +52,18 @@ $status &if$age_born{parent} &if$dep_born{&if&gt{~oldest_dependent_age}{17}{grow
 >health_tag
 &if$death{dying} &if$injuries{&join$injuries}{&if&not$death{healthy}} &if&and&gt$age{13}&lt$age{50}{fertile}
 
->strip
-
 
 >new_injury
 &push$injuries$$1
 
 >got_injury
-&filter$injury:$injuries{&match/$$1/{$injury}}
+&filter$injury:$injuries{&eval{\&match/$$1/\{\$injury\}\{1\}}}
 
 >recover_from_injury
-$injuries=&filter$item:$injuries{&not&match/$$1/{$item}}
+$injuries=&filter$item:$injuries{&not&eval{\&match/$$1/\{\$item\}\{1\}}}
 
 >update_health
-&if{&~got_injury{cancer}}{GOT_CANCER [||~advance_cancer]}{&if{&gt$age{45}}{&prob{0.2}{GETTING_CANCER ~get_cancer}{NO_CANCER}}{TOO_YOUNG_FOR_CANCER}}
+&if{&~got_injury{cancer}}{[||~advance_cancer]}{&if{&gt$age{45}}{&prob{0.2}{~get_cancer}{}}}
 
 >get_cancer
 &push$injuries{cancer}

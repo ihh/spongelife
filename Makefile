@@ -1,6 +1,6 @@
 # Edit to change path to Bracery
-# BRACERY = bracery
-BRACERY = $(HOME)/bracery/bin/bracery
+BRACERY = bracery
+# BRACERY = $(HOME)/bracery/bin/bracery
 
 # Data files
 DEFS = data/defs.txt
