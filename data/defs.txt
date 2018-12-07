@@ -1,8 +1,20 @@
 >age
-age$age:=&add{1}$age ~age_tag ~school_tag
+age$age:=&add{1}$age ~age_tag ~school_tag ~job_tag
 
 >age_tag
-&if&lt$age{18}{child}{adult} &if&lt$age{2}{baby infant}&if&lt$age{4}{toddler infant}&if&lt$age{10}{young-child}&if&lt$age{13}{preteen}&if&lt$age{20}{teen}&if&lt$age{30}{twenties}&if&lt$age{40}{thirties}&if&lt$age{50}{forties middle-age}&if&lt$age{60}{fifties midage middle-age}&if&lt$age{70}{sixties old}{old}
+&if&lt$age{18}{child}{adult} &if&lt$age{2}{baby infant}&if&lt$age{4}{toddler infant}&if&lt$age{10}{young-child}&if&lt$age{13}{preteen}&if&lt$age{20}{teen}&if&lt$age{30}{twenties}&if&lt$age{40}{thirties}&if&lt$age{50}{forties middle-age}&if&lt$age{60}{fifties middle-age}&if&lt$age{70}{sixties old}{old}
 
 >school_tag
 &if&lt$age{2}{}&if&lt$age{5}{preschool}&if&eq$age{5}{kindergarten}&if&lt$age{18}{grade&subtract$age{5} &if&lt$age{10}{elem-school elementary-school}&if&lt$age{13}{middle-school}{high-school}}
+
+>job_tag
+&if$career_jobs&first$career_jobs&if&lt{18}{dependent}{unemployed}
+
+>career
+$career_jobs=&split$$1
+
+>promoted
+&if&gt&length$career_jobs{1}{$career_jobs=&notfirst$career_jobs}
+
+>sacked
+$career_jobs={}
