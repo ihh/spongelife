@@ -5,22 +5,22 @@
 ~birthday
 
 >Pizza restaurant # unemployed +twenties # ~age
-You get a job as a prep cook at a &~career{[pizza|falafel|noodle] restaurant}{prep-cook line-cook head-cook}$career.
+~new_career ~new_job_announcement
 
->Promotion # restaurant +promotion # ~age
-You work hard in the $career kitchen, and are promoted. ~promoted
+>Promotion # +promotion # ~age
+You work hard at the $employer, and are promoted. ~promoted
 
 >Restaurant # restaurant # ~age
-You work hard at the $career.
+You work hard at the $employer.
 
 >Fired! # restaurant # ~age
-You offend the $career owner, and are fired. ~career_end
+You [||||[accidentally|deliberately|mortally] ][insult|offend|attack|wound|injure] the [boss|owner|owners] at the $employer, and are [fired|sacked|let go|terminated][|| [immediately|forthwith|on the spot]]. ~career_end
 
 >Prep cook # prep-cook # ~age
-You work hard as a prep cook, and are promoted. ~promoted
+You work hard preparing ingredients as &a~current_job, and are promoted. ~promoted
 
 >Line cook # line-cook # ~age
-You work hard as a line cook, and are promoted. ~promoted
+You work hard cooking food as &a~current_job, and are promoted. ~promoted
 
 >Retirement # sixties seventies !retired # ~age
 You retire. ~retired
@@ -49,15 +49,15 @@ The engagement breaks off.
 >Married # engaged !unemployed # $status=married ~age
 The wedding is spectacular.
 
->Strife # married # $status=[married|divorcing] ~age
+>Strife # married # $status=[married|strife] ~age
 You begin an affair.
 You argue with your spouse.
 
->Reconciled # divorcing # $status=married ~age
+>Reconciled # strife # $status=married ~age
 You reconcile with your spouse.
 
->Divorced # divorcing # $status=[grieving|single] ~age
-You are divorced.
+>Divorced # strife # $status=[grieving|single] ~age
+You divorce.
 
 >Bereaved # married # $status=grieving ~age
 Your spouse dies.
@@ -66,11 +66,14 @@ Your spouse dies.
 You grieve, and move on.
 
 >Celibate # single grieving !child !senior # $status=celibate ~age
-You decide to become celibate.
+You decide [to become celibate|not to date] for a while.
 
 >Not celibate # celibate !senior # $status=single ~age
 Your period of celibacy is over.
 
+
+>Adopt # thirties forties fifties !unemployed # ~new_child ~age
+You adopt a baby!
 
 >Baby # married +fertile # ~new_child ~age
 You have a baby!
@@ -84,10 +87,11 @@ Your child leaves home.
 
 
 >Cancer # cancer !diagnosed-cancer # ~age
-You are diagnosed with cancer. &push$injuries{diagnosed-cancer}
+You are diagnosed with cancer. $cancer={$cancer diagnosed-cancer}
 
 >Recovery # diagnosed-cancer !dying !senior # ~age
-You recover from cancer. &~recover_from_injury{cancer}
+You recover from cancer. $cancer={}
+
 
 >Dead # epitaph # 
 $epitaph

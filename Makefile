@@ -3,21 +3,25 @@ BRACERY = bracery
 # BRACERY = $(HOME)/bracery/bin/bracery
 
 # Data files
-DEFS = data/defs.txt
-MARKOV = data/markov.txt
+SYMBOLS = $(wildcard data/symbols/*.txt)
+TEMPLATES = $(wildcard data/templates/*.txt)
+
+DEFS = $(addprefix -d ,$(SYMBOLS))
+MARKOV = $(addprefix -m ,$(TEMPLATES))
+QUIZ = $(addprefix -q ,$(TEMPLATES))
 
 # Run modes
 demo:
-	$(BRACERY) -d $(DEFS) -m $(MARKOV)
+	$(BRACERY) $(DEFS) $(MARKOV)
 
 tags:
-	$(BRACERY) -d $(DEFS) -m $(MARKOV) -v1
+	$(BRACERY) $(DEFS) $(MARKOV) -v1
 
 vars:
-	$(BRACERY) -d $(DEFS) -m $(MARKOV) -v2
+	$(BRACERY) $(DEFS) $(MARKOV) -v2
 
 game:
-	$(BRACERY) -d $(DEFS) -q $(MARKOV)
+	$(BRACERY) $(DEFS) $(QUIZ)
 
 debug:
-	$(BRACERY) -d $(DEFS) -q $(MARKOV) -v2
+	$(BRACERY) $(DEFS) $(QUIZ) -v2

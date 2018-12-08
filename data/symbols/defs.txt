@@ -8,7 +8,7 @@ $age=0 $status=single
 $age=&add{1}$age ~update_health
 
 >next
-&if&and$death&geq$age$death{epitaph}{~age_tag ~school_tag ~job_tag ~family_tag ~health_tag}
+&if&and$death&geq$age$death{epitaph}{~age_tag ~school_tag ~job_tag ~family_tag ~health_tag $misc_tags}
 
 >birthday
 You are [$age|&add{zero}$age][|| [today|years [old|old|old|old|young]]][||| and [counting|still [alive|breathing|going]]].
@@ -20,13 +20,28 @@ age$age &if&lt$age{18}{minor}&if&lt$age{75}{adult}{senior} &if&lt$age{2}{baby in
 &if&lt$age{2}{}&if&lt$age{5}{preschool}&if&eq$age{5}{kindergarten}&if&lt$age{18}{grade&subtract$age{5} &if&lt$age{10}{elementary}&if&lt$age{13}{middle}{high}}
 
 >job_tag
-$career &if&gt&length$career_jobs{1}{promotion} &if$career_jobs&first$career_jobs&if&lt$age{18}{dependent}&if$retired{retired}{unemployed}
+$employer &if&gt&length$career_jobs{1}{promotion} &if$career_jobs&first$career_jobs&if&lt$age{18}{dependent}&if$retired{retired}{unemployed}
+
+>current_job
+&if$career_jobs{&join{&split/-/&first$career_jobs}{ }}
+
+>new_tag
+$misc_tags={$misc_tags $$1}
+
+>change_tag
+$misc_tags=&eval{\&replace/$$1/\$misc_tags{$$1}}
+
+>new_career
+&~career{[pizza|falafel|noodle] restaurant}{prep-cook line-cook head-cook}
+
+>new_job_announcement
+You get a job as a ~current_job at &a$employer.
 
 >career
-$career=$$1 $career_jobs=&split$$2
+$employer=$$1 $career_jobs=&split$$2
 
 >career_end
-$career={} $career_jobs={}
+$employer={} $career_jobs={}
 
 >promoted
 &if&gt&length$career_jobs{1}{$career_jobs=&notfirst$career_jobs}
@@ -50,26 +65,16 @@ $status &if$age_born{parent} &if$dep_born{&if&gt{~oldest_dependent_age}{17}{grow
 &if$age_born&subtract$age&first&shuffle$age_born
 
 >health_tag
-&if$death{dying} &if$injuries{&join$injuries}{&if&not$death{healthy}} &if&and&gt$age{13}&lt$age{50}{fertile}
-
-
->new_injury
-&push$injuries$$1
-
->got_injury
-&filter$injury:$injuries{&eval{\&match/$$1/\{\$injury\}\{1\}}}
-
->recover_from_injury
-$injuries=&filter$item:$injuries{&not&eval{\&match/$$1/\{\$item\}\{1\}}}
+&if$death{dying} $cancer
 
 >update_health
-&if{&~got_injury{cancer}}{[||~advance_cancer]}{&if{&gt$age{45}}{&prob{0.2}{~get_cancer}{}}}
+&if$cancer{[||~advance_cancer]}&if{&gt$age{40}}{[||||~get_cancer]}
 
 >get_cancer
-&push$injuries{cancer}
+$cancer=cancer
 
 >advance_cancer
-&if&and&not$death&~got_injury{cancer}{||&~die_of_cancer{[2|3|3|3|4|5]}}
+&if&and$cancer&not$death{||&~die_of_cancer{[two|three|3|3|four|5]}}
 
 >die_of_cancer
 $death=&add{$$1}$age $epitaph={You died of cancer at age $death.}
