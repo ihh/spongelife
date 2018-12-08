@@ -1,5 +1,14 @@
+# Big Five personality traits, plus $loved (relationship health), $fit (physical health), and $clever (intelligence)
+# From "Development of Personality in Early and Middle Adulthood: Set Like Plaster or Persistent Change?"
+# Srivastava et al (2003), Journal of Personality and Social Psychology, Vol. 84, No. 5, 1041–1053.
+
+# The power-multipliers for "more" and "less" (1.125 and 0.888, respectively) correspond to roughly +/- 4% when the initial value is 50%.
+
 >initial_traits
-$loved=0.9 $fit=0.9 $clever=0.1 $open=0.5 $careful=0.5 $extrovert=0.5 $agreeable=0.5 $neurotic=0.5
+$loved=0.9 $clever=0.1 $fit=0.9 $open=0.8 $careful=0.5 $extrovert=0.6 $agreeable=0.6 $neurotic=0.5
+
+>age_traits
+~age_fit~age_open~age_careful~age_extrovert~age_agreeable~age_neurotic
 
 
 >more_loved
@@ -31,7 +40,7 @@ $fit=&pow$fit{0.888}
 >less_fit
 $fit=&pow$fit{1.125}
 
->slightly_less_fit
+>age_fit
 $fit=&pow$fit{1.05}
 
 >more_unfit
@@ -53,6 +62,9 @@ $open=&pow$open{0.888}
 >less_open
 $open=&pow$open{1.125}
 
+>age_open
+$open=&pow$open{1.005}
+
 >more_closed
 ~less_open
 
@@ -62,6 +74,9 @@ $careful=&pow$careful{0.888}
 
 >less_careful
 $careful=&pow$careful{1.125}
+
+>age_careful
+$careful=&pow$careful{&if&lt$age{40}{0.98}{0.99}}
 
 >more_careless
 ~less_careful
@@ -75,6 +90,9 @@ $extrovert=&pow$extrovert{0.888}
 
 >less_extrovert
 $extrovert=&pow$extrovert{1.125}
+
+>age_extrovert
+$extrovert=&pow$extrovert{1.005}
 
 >more_introvert
 ~less_extrovert
@@ -92,6 +110,9 @@ $agreeable=&pow$agreeable{0.888}
 >less_agreeable
 $agreeable=&pow$agreeable{1.125}
 
+>age_agreeable
+&if&and&gt$age{30}&lt$age{50}{$agreeable=&pow$agreeable{0.98}}
+
 >more_disagreeable
 ~less_agreeable
 
@@ -101,6 +122,9 @@ $neurotic=&pow$neurotic{0.888}
 
 >less_neurotic
 $neurotic=&pow$neurotic{1.125}
+
+>age_neurotic
+$neurotic=&pow$neurotic{1.005}
 
 >more_stable
 ~less_neurotic
