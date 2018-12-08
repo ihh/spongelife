@@ -1,5 +1,5 @@
 >initial_traits
-$loved=0.5 $clever=0.5 $fit=0.5 $open=0.5 $careful=0.5 $extrovert=0.5 $agreeable=0.5 $neurotic=0.5
+$loved=0.9 $fit=0.9 $clever=0.1 $open=0.5 $careful=0.5 $extrovert=0.5 $agreeable=0.5 $neurotic=0.5
 
 
 >more_loved
@@ -30,6 +30,9 @@ $fit=&pow$fit{0.888}
 
 >less_fit
 $fit=&pow$fit{1.125}
+
+>slightly_less_fit
+$fit=&pow$fit{1.05}
 
 >more_unfit
 ~less_fit
