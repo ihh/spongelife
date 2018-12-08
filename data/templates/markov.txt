@@ -1,11 +1,11 @@
 >Born # root !dead # ~age
-~born You are born.
+~{born}You are born.
 
 >Birthday # minor adult senior # ~age
 ~birthday
 
 >Pizza restaurant # unemployed +twenties # ~age
-~new_career ~new_job_announcement
+~new_career~new_job_announcement
 
 >Promotion # +promotion # ~age
 You work hard at the $employer, and are promoted. ~promoted

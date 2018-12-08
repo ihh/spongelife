@@ -1,5 +1,5 @@
 >born
-$age=0 $status=single
+$status=single $age=0 $cash=0 ~initial_traits
 
 >age
 ~older ~next
