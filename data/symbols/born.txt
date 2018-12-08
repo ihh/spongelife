@@ -1,0 +1,2 @@
+>born
+$status=single $age=0 $cash=0 ~initial_traits

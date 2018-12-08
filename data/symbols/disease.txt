@@ -1,0 +1,16 @@
+
+>health_tag
+&if$death{dying} $cancer
+
+>update_health
+&if$cancer{[||~advance_cancer]}&if{&gt$age{40}}{[||||~get_cancer]}
+
+
+>get_cancer
+$cancer=cancer
+
+>advance_cancer
+&if&and$cancer&not$death{||&~die_of_cancer{[two|three|3|3|four|5]}}
+
+>die_of_cancer
+$death=&add{$$1}$age $epitaph={You died of cancer at age $death.}

@@ -3,25 +3,45 @@ BRACERY = bracery
 # BRACERY = $(HOME)/bracery/bin/bracery
 
 # Data files
-SYMBOLS = $(wildcard data/symbols/*.txt)
-TEMPLATES = $(wildcard data/templates/*.txt)
+DATADIR = data
+SYMDIR = $(DATADIR)/symbols
+TMPLDIR = $(DATADIR)/templates
+MAIN_TEMPLATE = $(TMPLDIR)/main.txt
+ALL_TEMPLATES = $(TMPLDIR)/markov.txt
+
+SYMBOLS = $(wildcard $(SYMDIR)/*.txt)
+TEMPLATES = $(filter-out $(ALL_TEMPLATES),$(filter-out $(MAIN_TEMPLATE),$(wildcard $(TMPLDIR)/*.txt)))
 
 DEFS = $(addprefix -d ,$(SYMBOLS))
-MARKOV = $(addprefix -m ,$(TEMPLATES))
-QUIZ = $(addprefix -q ,$(TEMPLATES))
+MARKOV = -m $(ALL_TEMPLATES)
+QUIZ = -q $(ALL_TEMPLATES)
+
+# Top-level target
+all: demo
 
 # Run modes
-demo:
+demo: templates
 	$(BRACERY) $(DEFS) $(MARKOV)
 
-tags:
+tags: templates
 	$(BRACERY) $(DEFS) $(MARKOV) -v1
 
-vars:
+vars: templates
 	$(BRACERY) $(DEFS) $(MARKOV) -v2
 
-game:
+game: templates
 	$(BRACERY) $(DEFS) $(QUIZ)
 
-debug:
+debug: templates
 	$(BRACERY) $(DEFS) $(QUIZ) -v2
+
+# Intermediate files
+templates: $(ALL_TEMPLATES)
+
+clean:
+	rm $(ALL_TEMPLATES)
+
+$(ALL_TEMPLATES): $(MAIN_TEMPLATE) $(TEMPLATES)
+	cat $^ >$@
+
+.SECONDARY:

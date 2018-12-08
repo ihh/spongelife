@@ -1,0 +1,6 @@
+
+>Cancer # cancer !diagnosed-cancer # ~age
+You are diagnosed with cancer. $cancer={$cancer diagnosed-cancer}
+
+>Recovery # diagnosed-cancer !dying !senior # ~age
+You recover from cancer. $cancer={}

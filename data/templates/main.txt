@@ -1,0 +1,8 @@
+>Born # root !dead # ~age
+~{born}You are born.
+
+>Birthday # minor adult senior # ~age
+~birthday
+
+>Dead # epitaph # 
+$epitaph

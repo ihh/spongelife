@@ -1,0 +1,6 @@
+
+>job_tag
+$employer &if&gt&length$career_jobs{1}{promotion} &if$career_jobs&first$career_jobs&if&lt$age{18}{dependent}&if$retired{retired}{unemployed}
+
+>current_job
+&if$career_jobs{&join{&split/-/&first$career_jobs}{ }}

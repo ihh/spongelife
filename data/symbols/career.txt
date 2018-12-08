@@ -1,0 +1,18 @@
+
+>new_career
+&~career{[pizza|falafel|noodle] restaurant}{prep-cook line-cook head-cook}
+
+>new_job_announcement
+You get a job as a ~current_job at &a$employer.
+
+>career
+$employer=$$1 $career_jobs=&split$$2
+
+>career_end
+$employer={} $career_jobs={}
+
+>promoted
+&if&gt&length$career_jobs{1}{$career_jobs=&notfirst$career_jobs}
+
+>retired
+~career_end $retired=1

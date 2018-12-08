@@ -1,0 +1,3 @@
+
+>school_tag
+&if&lt$age{2}{}&if&lt$age{5}{preschool}&if&eq$age{5}{kindergarten}&if&lt$age{18}{grade&subtract$age{5} &if&lt$age{10}{elementary}&if&lt$age{13}{middle}{high}}

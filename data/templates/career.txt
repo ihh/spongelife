@@ -1,0 +1,21 @@
+
+>Pizza restaurant # unemployed +twenties # ~age
+~new_career~new_job_announcement
+
+>Promotion # +promotion # ~age
+You work hard at the $employer, and are promoted. ~promoted
+
+>Restaurant # restaurant # ~age
+You work hard at the $employer.
+
+>Fired! # restaurant # ~age
+You [||||[accidentally|deliberately|mortally] ][insult|offend|attack|wound|injure] the [boss|owner|owners] at the $employer, and are [fired|sacked|let go|terminated][|| [immediately|forthwith|on the spot]]. ~career_end
+
+>Prep cook # prep-cook # ~age
+You work hard preparing ingredients as &a~current_job, and are promoted. ~promoted
+
+>Line cook # line-cook # ~age
+You work hard cooking food as &a~current_job, and are promoted. ~promoted
+
+>Retirement # sixties seventies !retired # ~age
+You retire. ~retired

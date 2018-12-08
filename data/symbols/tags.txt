@@ -1,0 +1,11 @@
+
+>new_tag
+$misc_tags={$misc_tags $$1}
+
+>change_tag
+$misc_tags=&eval{\&replace/$$1/\$misc_tags{$$1}}
+
+>tags
+~age_tag ~school_tag ~job_tag ~family_tag ~health_tag $misc_tags
+
+
