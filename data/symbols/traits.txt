@@ -8,7 +8,7 @@
 $loved=0.9 $clever=0.1 $fit=0.9 $open=0.8 $careful=0.5 $extrovert=0.6 $agreeable=0.6 $neurotic=0.5
 
 >age_traits
-~age_fit~age_open~age_careful~age_extrovert~age_agreeable~age_neurotic
+~age_fit~age_open~age_careful~age_agreeable~age_neurotic
 
 
 >more_loved
@@ -90,9 +90,6 @@ $extrovert=&pow$extrovert{0.888}
 
 >less_extrovert
 $extrovert=&pow$extrovert{1.125}
-
->age_extrovert
-$extrovert=&pow$extrovert{1.005}
 
 >more_introvert
 ~less_extrovert
