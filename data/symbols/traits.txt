@@ -12,10 +12,10 @@ $loved=0.9 $clever=0.1 $fit=0.9 $open=0.6 $careful=0.5 $extrovert=0.6 $agreeable
 
 
 >more_loved
-$loved=&pow$loved{0.8}
+$loved=&add&multiply$loved{0.8}{0.2}
 
 >less_loved
-$loved=&pow$loved{1.25}
+$loved=&multiply$loved{0.8}
 
 >more_unloved
 ~less_loved
@@ -25,23 +25,23 @@ $loved=&pow$loved{1.25}
 
 
 >more_clever
-$clever=&pow$clever{0.8}
+$clever=&add&multiply$clever{0.8}{0.2}
 
 >less_clever
-$clever=&pow$clever{1.25}
+$clever=&multiply$clever{0.8}
 
 >more_stupid
 ~less_clever
 
 
 >more_fit
-$fit=&pow$fit{0.8}
+$fit=&add&multiply$fit{0.8}{0.2}
 
 >less_fit
-$fit=&pow$fit{1.25}
+$fit=&multiply$fit{0.8}
 
 >age_fit
-$fit=&pow$fit{1.05}
+$fit=&multiply$fit&subtract{0.99}&divide$age{1000}
 
 >more_unfit
 ~less_fit
@@ -57,26 +57,26 @@ $fit=&pow$fit{1.05}
 
 
 >more_open
-$open=&pow$open{0.8}
+$open=&add&multiply$open{0.8}{0.2}
 
 >less_open
-$open=&pow$open{1.25}
+$open=&multiply$open{0.8}
 
 >age_open
-$open=&pow$open{1.005}
+$open=&multiply$open{0.996}
 
 >more_closed
 ~less_open
 
 
 >more_careful
-$careful=&pow$careful{0.8}
+$careful=&add&multiply$careful{0.8}{0.2}
 
 >less_careful
-$careful=&pow$careful{1.25}
+$careful=&multiply$careful{0.8}
 
 >age_careful
-$careful=&pow$careful{&if&lt$age{40}{0.98}{0.99}}
+$careful=&subtract{1}&multiply&subtract{1}$careful&if&lt$age{40}{0.99}{0.995}
 
 >more_careless
 ~less_careful
@@ -86,10 +86,10 @@ $careful=&pow$careful{&if&lt$age{40}{0.98}{0.99}}
 
 
 >more_extrovert
-$extrovert=&pow$extrovert{0.8}
+$extrovert=&add&multiply$extrovert{0.8}{0.2}
 
 >less_extrovert
-$extrovert=&pow$extrovert{1.25}
+$extrovert=&multiply$extrovert{0.8}
 
 >more_introvert
 ~less_extrovert
@@ -102,26 +102,26 @@ $extrovert=&pow$extrovert{1.25}
 
 
 >more_agreeable
-$agreeable=&pow$agreeable{0.8}
+$agreeable=&add&multiply$agreeable{0.8}{0.2}
 
 >less_agreeable
-$agreeable=&pow$agreeable{1.25}
+$agreeable=&multiply$agreeable{0.8}
 
 >age_agreeable
-&if&and&gt$age{30}&lt$age{50}{$agreeable=&pow$agreeable{0.98}}
+&if&and&gt$age{30}&lt$age{50}{$agreeable=&add&multiply$agreeable{0.99}{0.01}}
 
 >more_disagreeable
 ~less_agreeable
 
 
 >more_neurotic
-$neurotic=&pow$neurotic{0.8}
+$neurotic=&add&multiply$neurotic{0.8}{0.2}
 
 >less_neurotic
-$neurotic=&pow$neurotic{1.25}
+$neurotic=&multiply$neurotic{0.8}
 
 >age_neurotic
-$neurotic=&pow$neurotic{1.005}
+$neurotic=&multiply$neurotic{0.99}
 
 >more_stable
 ~less_neurotic
