@@ -1,14 +1,14 @@
 
->Pizza restaurant # unemployed +twenties # ~age
+>Pizza restaurant # unemployed +twenties # ~more_careful ~more_agreeable ~less_neurotic ~more_open ~age
 ~new_career~new_job_announcement
 
->Promotion # +promotion # ~age
+>Promotion # +promotion # ~more_careful ~more_agreeable ~less_neurotic ~more_open ~age
 You work hard at the $employer, and are promoted. ~promoted
 
->Restaurant # restaurant # ~age
+>Restaurant # restaurant # ~more_careful ~age
 You work hard at the $employer.
 
->Fired! # restaurant # ~age
+>Fired! # restaurant # ~less_careful ~less_agreeable ~more_neurotic ~less_open ~age
 You [||||[accidentally|deliberately|mortally] ][insult|offend|attack|wound|injure] the [boss|owner|owners] at the $employer, and are [fired|sacked|let go|terminated][|| [immediately|forthwith|on the spot]]. ~career_end
 
 >Prep cook # prep-cook # ~age

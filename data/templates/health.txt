@@ -1,4 +1,7 @@
 
+>Gym # +careful !child # ~more_fit ~age
+You go to the gym.
+
 >Cancer # cancer !diagnosed-cancer # ~age
 You are diagnosed with cancer. $cancer={$cancer diagnosed-cancer}
 

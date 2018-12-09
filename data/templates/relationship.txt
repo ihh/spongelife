@@ -1,40 +1,46 @@
 
->Dating # single !child # $status=dating ~age
-You go on a date.
+>Dating # single !child +extravert +open # $status=dating ~age
+You go on a date with $lover:=~english_first_name ~english_last_name.
 
 >Single # dating # $status=single ~age
 Dating bores you.
 
->Relationship # dating # $status=relationship ~age
-You're in a relationship.
+>Relationship # dating +loved # $status=relationship ~age
+You're in a relationship with $lover.
 
->Single # relationship # $status=[single|grieving] ~age
-You break up.
+>Single # relationship +loved # $status=[single|grieving] ~age
+You break up with $lover.
 
->Engaged # relationship !minor # $status=engaged ~age
-You're engaged to be married!
+>Single # relationship -loved # $status=[single|grieving] ~age
+$Lover dumps you.
+
+>Engaged # relationship !minor +loved # $status=engaged ~age
+You and $lover are engaged to be married!
 
 >Single # engaged # $status=single ~age
-The engagement breaks off.
+You break off the engagement with $lover.
 
->Married # engaged !unemployed # $status=married ~age
-The wedding is spectacular.
+>Single # engaged -loved # $status=single ~age
+$Lover breaks off the engagement.
 
->Strife # married # $status=[married|strife] ~age
-You begin an affair.
-You argue with your spouse.
+>Married # engaged !unemployed +loved # $status=married ~age
+Your wedding to $lover is spectacular.
 
->Reconciled # strife # $status=married ~age
-You reconcile with your spouse.
+>Strife # married !minor # $status=[married|strife] ~age
+You begin an affair with ~english_first_name, a ~human_occupation from ~english_city.
+You argue with $lover.
+
+>Reconciled # strife +loved # $status=married ~age
+You reconcile with $lover.
 
 >Divorced # strife # $status=[grieving|single] ~age
-You divorce.
+You divorce $lover.
 
 >Bereaved # married # $status=grieving ~age
-Your spouse dies.
+$Lover dies.
 
 >Grieving # grieving # $status=single ~age
-You grieve, and move on.
+You grieve $lover, and move on.
 
 >Single # single grieving !child !senior # $status=celibate ~age
 You decide [to stay single|not to date] for a while.

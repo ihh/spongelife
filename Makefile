@@ -1,6 +1,6 @@
 # Edit to change path to Bracery
-BRACERY = bracery
-# BRACERY = $(HOME)/bracery/bin/bracery
+# BRACERY = bracery
+BRACERY = $(HOME)/bracery/bin/bracery
 
 # Data files
 DATADIR = data
@@ -9,7 +9,7 @@ TMPLDIR = $(DATADIR)/templates
 MAIN_TEMPLATE = $(TMPLDIR)/main.txt
 ALL_TEMPLATES = $(TMPLDIR)/markov.txt
 
-SYMBOLS = $(wildcard $(SYMDIR)/*.txt)
+SYMBOLS = $(wildcard $(SYMDIR)/*.txt) $(wildcard $(SYMDIR)/*.json)
 TEMPLATES = $(filter-out $(ALL_TEMPLATES),$(filter-out $(MAIN_TEMPLATE),$(wildcard $(TMPLDIR)/*.txt)))
 
 DEFS = $(addprefix -d ,$(SYMBOLS))
