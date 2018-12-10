@@ -1,0 +1,50 @@
+# Open (vs Closed)
+# Imagination, Artistic interests, Emotionality, Adventurousness, Intellect, Liberalism
+
+# Synonyms: Imaginative, curious, reflective, creative, sophisticated
+# Antonyms: Unimaginative, uninquisitive, unreflective, uncreative, unsophisticated
+
+
+
+
+# Conscientious (vs Uninhibited)
+# Self-efficacy, Orderliness, Dutifulness, Achievement-striving, Self-discipline, Cautiousness
+
+# Synonyms: Reliable, practical, hardworking, organized, careful
+# Antonyms: Unreliable, impractical, lazy, disorganized, negligent
+
+>Homework # +school # ~more_careful ~more_clever ~age
+You do your homework.
+
+>Truant # +school -careful # ~less_careful ~age
+You play truant from school.
+
+
+
+# Extrovert (vs Introvert)
+# Friendliness, Gregariousness, Assertiveness, Activity level, Excitement-seeking, Cheerfulness
+
+# Synonyms: Outgoing, bold, talkative, energetic, assertive
+# Antonyms: Withdrawn, timid, silent, reserved, shy
+
+
+
+# Agreeable (vs Antagonistic)
+# Trust, Morality, Altruism, Cooperation, Modesty, Sympathy
+
+# Synonyms: Warm, kind, cooperative, trusting, generous
+# Antonyms: Cold, unkind, uncooperative, suspicious, stingy
+
+>Volunteer # middle high adult # ~more_agreeable ~more_open ~age
+You help out at the local soup kitchen.
+
+>Stealing # school # ~less_agreeable ~age
+You steal some candy from a local store.
+
+
+
+# Neurotic (vs Stable)
+# Anxiety, Anger, Depression, Self-consciousness, Immoderation, Vulnerability
+
+# Synonyms: Tense, unstable, discontented, irritable, insecure
+# Antonyms: Relaxed, stable, contented, imperturbable, secure

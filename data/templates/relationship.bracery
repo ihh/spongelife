@@ -27,7 +27,7 @@ $Lover breaks off the engagement.
 Your wedding to $lover is spectacular.
 
 >Strife # married !minor # $status=[married|strife] ~age
-You begin an affair with ~english_first_name, a ~human_occupation from ~english_city.
+You begin an affair with ~english_first_name, &a~human_occupation from ~english_city.
 You argue with $lover.
 
 >Reconciled # strife +loved # $status=married ~age

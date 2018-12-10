@@ -6,11 +6,11 @@ BRACERY = $(HOME)/bracery/bin/bracery
 DATADIR = data
 SYMDIR = $(DATADIR)/symbols
 TMPLDIR = $(DATADIR)/templates
-MAIN_TEMPLATE = $(TMPLDIR)/main.txt
-ALL_TEMPLATES = $(TMPLDIR)/markov.txt
+MAIN_TEMPLATE = $(TMPLDIR)/main.bracery
+ALL_TEMPLATES = $(TMPLDIR)/markov.bracery
 
-SYMBOLS = $(wildcard $(SYMDIR)/*.txt) $(wildcard $(SYMDIR)/*.json)
-TEMPLATES = $(filter-out $(ALL_TEMPLATES),$(filter-out $(MAIN_TEMPLATE),$(wildcard $(TMPLDIR)/*.txt)))
+SYMBOLS = $(wildcard $(SYMDIR)/*.bracery) $(wildcard $(SYMDIR)/*.json)
+TEMPLATES = $(filter-out $(ALL_TEMPLATES),$(filter-out $(MAIN_TEMPLATE),$(wildcard $(TMPLDIR)/*.bracery)))
 
 DEFS = $(addprefix -d ,$(SYMBOLS))
 MARKOV = -m $(ALL_TEMPLATES)
