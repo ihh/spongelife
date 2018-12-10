@@ -2,8 +2,6 @@
 # From "Development of Personality in Early and Middle Adulthood: Set Like Plaster or Persistent Change?"
 # Srivastava et al (2003), Journal of Personality and Social Psychology, Vol. 84, No. 5, 1041–1053.
 
-# The power-multipliers for "more" and "less" (1.25 and 0.8, respectively) correspond to roughly +/- 8% when the initial value is 50%.
-
 >initial_traits
 $loved=0.9 $clever=0.1 $fit=0.9 $open=0.6 $careful=0.5 $extrovert=0.6 $agreeable=0.6 $neurotic=0.5
 
