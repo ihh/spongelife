@@ -4,6 +4,12 @@
 # Synonyms: Imaginative, curious, reflective, creative, sophisticated
 # Antonyms: Unimaginative, uninquisitive, unreflective, uncreative, unsophisticated
 
+>Painting # +school # ~more_open ~age
+You paint a picture.
+
+>TV # +school !open # ~less_open ~age
+You lack imagination.
+
 
 
 
@@ -13,8 +19,9 @@
 # Synonyms: Reliable, practical, hardworking, organized, careful
 # Antonyms: Unreliable, impractical, lazy, disorganized, negligent
 
->Homework # +school # ~more_careful ~more_clever ~age
+>Homework # +school # ~more_careful ~age
 You do your homework.
+You do your math homework. ~more_clever
 
 >Truant # +school -careful # ~less_careful ~age
 You play truant from school.
@@ -26,6 +33,13 @@ You play truant from school.
 
 # Synonyms: Outgoing, bold, talkative, energetic, assertive
 # Antonyms: Withdrawn, timid, silent, reserved, shy
+
+>Party # +school # ~more_extrovert ~age
+You go to a party.
+
+>Recluse # +school # ~more_introvert ~age
+You are invited to a party, but you stay at home.
+
 
 
 
@@ -48,3 +62,9 @@ You steal some candy from a local store.
 
 # Synonyms: Tense, unstable, discontented, irritable, insecure
 # Antonyms: Relaxed, stable, contented, imperturbable, secure
+
+>Party # +school # ~more_neurotic ~age
+You go to a party.
+
+>Recluse # +school # ~more_stable ~age
+Your friend is mean to you, but you take it in your stride.

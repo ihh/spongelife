@@ -16,24 +16,28 @@ DEFS = $(addprefix -d ,$(SYMBOLS))
 MARKOV = -m $(ALL_TEMPLATES)
 QUIZ = -q $(ALL_TEMPLATES)
 
+ifneq ($(SEED),)
+RNDSEED = -R $(SEED)
+endif
+
 # Top-level target
 all: demo
 
 # Run modes
 demo: templates
-	$(BRACERY) $(DEFS) $(MARKOV)
+	$(BRACERY) $(RNDSEED) $(DEFS) $(MARKOV)
 
 tags: templates
-	$(BRACERY) $(DEFS) $(MARKOV) -v1
+	$(BRACERY) $(RNDSEED) $(DEFS) $(MARKOV) -v1
 
 vars: templates
-	$(BRACERY) $(DEFS) $(MARKOV) -v2
+	$(BRACERY) $(RNDSEED) $(DEFS) $(MARKOV) -v2
 
 game: templates
-	$(BRACERY) $(DEFS) $(QUIZ)
+	$(BRACERY) $(RNDSEED) $(DEFS) $(QUIZ)
 
 debug: templates
-	$(BRACERY) $(DEFS) $(QUIZ) -v2
+	$(BRACERY) $(RNDSEED) $(DEFS) $(QUIZ) -v2
 
 # Intermediate files
 templates: $(ALL_TEMPLATES)
