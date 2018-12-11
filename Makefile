@@ -46,6 +46,10 @@ clean:
 	rm $(ALL_TEMPLATES)
 
 $(ALL_TEMPLATES): $(MAIN_TEMPLATE) $(TEMPLATES)
-	cat $^ >$@
+	cat $(MAIN_TEMPLATE) >$@
+	for FILE in $(MAIN_TEMPLATE) $(TEMPLATES) ; do \
+	echo >>$@; \
+	cat $$FILE >>$@; \
+	done
 
 .SECONDARY:
