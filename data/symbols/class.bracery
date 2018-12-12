@@ -1,0 +1,8 @@
+>decide_class
+rich&~new_tag{rich}
+wealthy&~new_tag{rich}
+middle-class
+averagely wealthy
+poor&~new_tag{poor}
+desperately poor&~new_tag{poor}
+hardscrabble&~new_tag{poor}

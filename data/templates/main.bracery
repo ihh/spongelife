@@ -1,5 +1,5 @@
 >Born # root !dead # ~age
-~{born}You are born.
+~{born}You are born into &a~decide_class family in ~english_town.
 
 >Birthday # minor adult senior # ~age
 ~birthday

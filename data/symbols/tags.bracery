@@ -1,4 +1,7 @@
 
+# $sponge holds miscellaneous tags
+# modify it with &~new_tag{X} and &~change_tag{X}{Y}
+
 >new_tag
 $sponge={$sponge $$1}
 
@@ -6,7 +9,4 @@ $sponge={$sponge $$1}
 $sponge=&eval{\&replace/$$1/\$sponge{$$2}}
 
 >tags
-~age_tag ~personality_tags ~school_tag ~job_tag ~family_tag ~health_tag $sponge
-
->personality_tags
-&prob$open{open}{} &prob$careful{careful}{} &prob$extrovert{extrovert}{} &prob$agreeable{agreeable}{} &prob$neurotic{neurotic}{} &prob$loved{loved}{} &prob$fit{fit}{} &prob$clever{clever}{}
+~age_tag ~traits_tag ~school_tag ~job_tag ~family_tag ~health_tag $sponge

@@ -1,12 +1,12 @@
 
 >family_tag
-$status &if$age_born{parent} &if$dep_born{&if&gt{~oldest_dependent_age}{17}{grownup}{childcare}}
+$status &if$age_born{parent} &if$dep_born{&if&gt{~oldest_dependent_age}{17}{grown_child}&if&gt{~oldest_dependent_age}{12}{teen_child}{dependent_child}}
 
 >new_child
 &push$age_born$age &push$dep_born$age
 
 >exit_child
-&pop$dep_born
+&shift$dep_born
 
 >oldest_dependent_age
 &if$dep_born&subtract$age&first$dep_born
