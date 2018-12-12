@@ -78,7 +78,7 @@ Your friend is mean to you, but you take it in your stride.
 You take a trip to the science center. The interactive room at the top is the best.
 
 >Hike # +open +fit +school # ~more_open ~more_fit ~age
-You get taken for a hike in the woods. You fall asleep in the &if&lt$age{3}{baby carrier}{woods}.
+You get taken for a hike in the woods. You fall asleep &if&lt$age{3}{in the baby carrier}{among the trees}.
 
 >Divorce # +open child # ~more_open ~more_introvert ~age
 Your parents get divorced. You build a dolls' house in your mom's closet.
@@ -86,11 +86,11 @@ Your parents get divorced. You build a dolls' house in your mom's closet.
 >Programming # +open middle high # ~more_educated ~age
 You learn to program, as a hobby. You aren't very good at it, but you're good enough to get paid.
 
->Role-playing # +open # ~more_open ~more_agreeable ~less_neurotic ~age
+>Role-playing # +open elementary middle # ~more_open ~more_agreeable ~less_neurotic ~age
 You become interested in role-playing games. Twice a week you hang out at the game shop.
 
->Rock band # +open # ~more_open ~more_agreeable ~less_neurotic ~age
+>Rock band # +open middle high # ~more_open ~more_agreeable ~less_neurotic ~age
 You start a rock band at summer camp. You sing and play bass. The camp leaders teach you martial arts.
 
->Rock band # +open # ~more_open ~more_agreeable ~less_neurotic ~age
-You take part in the school musical. You dress in denim, and try to be sexy.
+>Musical # +open high # ~more_open ~more_agreeable ~less_neurotic ~age
+You take part in the high school musical. You dress in denim, and try to be sexy.
