@@ -1,14 +1,14 @@
-# Big Five (OCEAN) personality traits, plus $loved (relationship health), $fit (physical health), and $educated (rough proxy for educational attainment)
+# Big Five (OCEAN) personality traits, plus $loved (relationship health) and $fit (physical health)
 
 # Formulae for aging of the OCEAN traits over time is pretty arbitrary, but see e.g.
 # "Development of Personality in Early and Middle Adulthood: Set Like Plaster or Persistent Change?"
 # Srivastava et al (2003), Journal of Personality and Social Psychology, Vol. 84, No. 5, 1041–1053.
 
 >initial_traits
-$loved=0.9 $educated=0.1 $fit=0.9 $open=0.6 $careful=0.5 $extrovert=0.6 $agreeable=0.6 $neurotic=0.5
+$loved=0.9 $fit=0.9 $open=0.6 $careful=0.5 $extrovert=0.6 $agreeable=0.6 $neurotic=0.5
 
 >traits_tag
-&prob$open{open}{closed} &prob$careful{careful}{carefree} &prob$extrovert{extrovert}{introvert} &prob$agreeable{agreeable}{disagreeable} &prob$neurotic{neurotic}{stable} &prob$loved{loved}{unloved} &prob$fit{fit}{unfit} &prob$educated{educated}{ignorant}
+&prob$open{open}{closed} &prob$careful{careful}{carefree} &prob$extrovert{extrovert}{introvert} &prob$agreeable{agreeable}{disagreeable} &prob$neurotic{neurotic}{stable} &prob$loved{loved}{unloved} &prob$fit{fit}{unfit}
 
 >age_traits
 ~age_fit~age_open~age_careful~age_agreeable~age_neurotic
@@ -25,16 +25,6 @@ $loved=&math{0.8*$loved}
 
 >more_hated
 ~less_loved
-
-
->more_educated
-$educated=&math{0.8*$educated + 0.2}
-
->less_educated
-$educated=&math{0.8*$educated}
-
->more_stupid
-~less_educated
 
 
 >more_fit
