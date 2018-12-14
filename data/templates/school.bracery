@@ -20,7 +20,7 @@ You lack imagination.
 
 >Homework # +school # ~more_careful ~age
 You stay out of trouble. ~more_closed
-You do your homework. ~more_educated
+You do your homework. ~more_open
 
 >Truant # +school -careful # ~less_careful ~age
 You play truant from school.
@@ -74,7 +74,7 @@ Your friend is mean to you, but you take it in your stride.
 
 # More
 
->Trip # +open +educated +elementary # ~more_open ~more_educated ~age
+>Trip # +open +elementary # ~more_open ~age
 You take a trip to the science center. The interactive room at the top is the best.
 
 >Hike # +open +fit +school # ~more_open ~more_fit ~age
@@ -83,7 +83,7 @@ You get taken for a hike in the woods. You fall asleep &if&lt$age{3}{in the baby
 >Divorce # +open child # ~more_open ~more_introvert ~age
 Your parents get divorced. You build a dolls' house in your mom's closet.
 
->Programming # +open middle high # ~more_educated ~age
+>Programming # +open middle high # ~more_open ~age
 You learn to program, as a hobby. You aren't very good at it, but you're good enough to get paid.
 
 >Role-playing # +open elementary middle # ~more_open ~more_agreeable ~less_neurotic ~age
