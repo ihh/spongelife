@@ -197,7 +197,8 @@ var symbolFile = {
   charity: 'extra/charities.json',
   sport: 'extra/sports.json',
   board_game: 'extra/board_games.json',
-  bestseller: 'extra/bestsellers.json'
+  bestseller: 'extra/bestsellers.json',
+  academic_subject: 'extra/subjects.json'
 }
 
 Object.keys(symbolPath).forEach (function (symbol) {
