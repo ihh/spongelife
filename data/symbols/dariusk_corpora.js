@@ -193,7 +193,8 @@ var symbolFile = {
   anthropogenic_feature: 'obo/anthropogenic_features.json',
   geographic_feature: 'obo/geographic_features.json',
   cephalopod_part: 'obo/cephalopod_anatomy.json',
-  ant_part: 'obo/ant_anatomy.json'
+  ant_part: 'obo/ant_anatomy.json',
+  charity: 'extra/charities.json'
 }
 
 Object.keys(symbolPath).forEach (function (symbol) {
