@@ -195,7 +195,8 @@ var symbolFile = {
   cephalopod_part: 'obo/cephalopod_anatomy.json',
   ant_part: 'obo/ant_anatomy.json',
   charity: 'extra/charities.json',
-  sport: 'extra/sports.json'
+  sport: 'extra/sports.json',
+  board_game: 'extra/board_games.json'
 }
 
 Object.keys(symbolPath).forEach (function (symbol) {
