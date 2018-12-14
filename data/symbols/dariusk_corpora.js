@@ -196,7 +196,8 @@ var symbolFile = {
   ant_part: 'obo/ant_anatomy.json',
   charity: 'extra/charities.json',
   sport: 'extra/sports.json',
-  board_game: 'extra/board_games.json'
+  board_game: 'extra/board_games.json',
+  bestseller: 'extra/bestsellers.json'
 }
 
 Object.keys(symbolPath).forEach (function (symbol) {
@@ -218,7 +219,11 @@ bb.Promise.map (targets, function (target) {
     return processFile ({ name: symbol,
                           path: filename,
                           rhs: function (entry) {
-                            return _.isArray(entry) ? entry.slice(entry.length-1) : [entry]
+                            return (_.isArray(entry)
+                                    ? entry.slice(entry.length-1)
+                                    : (typeof(entry) === 'object'
+                                       ? [entry.title]
+                                       : [entry]))
                           } },
                         fs.readFileSync(filename).toString())
   }))
