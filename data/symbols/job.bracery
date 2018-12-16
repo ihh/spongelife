@@ -1,6 +1,6 @@
 
 >job_tag
-$employer &if&gt&length$career_jobs{1}{promotion} &if$career_jobs{employed &first$career_jobs}&if&contains$sponge{ rich }{}&if&lt$age{18}{dependent}&if$retired{retired}{unemployed}
+$employer &if&gt&length$career_jobs{1}{promotion} &if$career_jobs{employed &first$career_jobs}&if&match/ rich /$sponge{1}&if&lt$age{18}{dependent}&if$retired{retired}{unemployed}
 
 >current_job
 &if$career_jobs{&join{&split/-/&first$career_jobs}{ }}
