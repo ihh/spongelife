@@ -1,6 +1,9 @@
-# Edit to change path to Bracery
+# Path to Bracery
+ifneq (,$(findstring local,$(MAKECMDGOALS)))
+BRACERY = $(HOME)/bracery/bin/bracery
+else
 BRACERY = bracery
-# BRACERY = $(HOME)/bracery/bin/bracery
+endif
 
 # Data files
 DATADIR = data
@@ -73,5 +76,8 @@ webstart:
 
 web/bracery.js: node_modules/bracery/web/bracery.js
 	cp $< $@
+
+# Directives
+local:
 
 .SECONDARY:
