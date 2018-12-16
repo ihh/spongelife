@@ -1,0 +1,14 @@
+{
+  "name": "spongelife",
+  "version": "1.0.1",
+  "description": "Life generator, using Bracery",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihh/spongelife.git"
+  },
+  "dependencies": {
+    "bracery": "git://github.com/ihh/bracery.git",
+    "compromise": "^11.7.0",
+    "jsonschema": "~1.2.4"
+  }
+}
