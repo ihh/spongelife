@@ -435,4 +435,8 @@ You start a rock band at summer camp. You sing and play bass. The camp leaders t
 
 >Musical # +open high # ~more_open ~more_agreeable ~less_neurotic ~age
 You take part in the high school musical. You dress in denim, and try to be sexy.
-## RESET
+
+>Tutoring # +school middle high #  ~more_introvert ~more_open ~age
+Your parents make you start tutoring. You hate it and ask to quit.
+Your parents hire a tutor.
+A tutor shows up at your house.## RESET
