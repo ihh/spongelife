@@ -4,6 +4,6 @@ package-lock.json
 *~
 */.DS_Store
 web/bracery.js
-web/markov.bracery
+web/templates.bracery
 web/symbols.bracery
 data/templates/markov.bracery
