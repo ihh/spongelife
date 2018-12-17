@@ -93,7 +93,7 @@ tempdefsElement.addEventListener ('keyup', update)
 resetElement.addEventListener ('click', update)
 
 var symbolsUrl = window.location.href + "symbols.bracery"
-var markovUrl = window.location.href + "markov.bracery"
+var markovUrl = window.location.href + "templates.bracery"
 
 var defsReq = new XMLHttpRequest();
 defsReq.addEventListener("load", function() {

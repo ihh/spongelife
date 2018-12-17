@@ -13,7 +13,7 @@ SYMDIR = $(DATADIR)/symbols
 TMPLDIR = $(DATADIR)/templates
 MAIN_TEMPLATE = $(TMPLDIR)/main.bracery
 
-ALL_TEMPLATES = $(WEBDIR)/markov.bracery
+ALL_TEMPLATES = $(WEBDIR)/templates.bracery
 ALL_SYMBOLS = $(WEBDIR)/symbols.bracery
 
 SYMBOLS_BRACERY = $(wildcard $(SYMDIR)/*.bracery)
@@ -55,7 +55,7 @@ clean:
 
 $(ALL_TEMPLATES): $(MAIN_TEMPLATE) $(TEMPLATES)
 	@cat $(MAIN_TEMPLATE) >$@
-	@for FILE in $(MAIN_TEMPLATE) $(TEMPLATES) ; do \
+	@for FILE in $(TEMPLATES) ; do \
 	 echo >>$@; \
 	 cat $$FILE >>$@; \
 	 echo \#\# RESET >>$@; \
