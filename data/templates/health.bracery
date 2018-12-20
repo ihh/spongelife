@@ -1,10 +1,10 @@
 
->Gym # +careful !child # ~more_fit ~age
+>Gym # +careful !child # ~more_fit
 You go to the gym.
 
->Cancer # cancer !diagnosed-cancer # ~age
+>Cancer # cancer !diagnosed-cancer #
 You are diagnosed with cancer. $cancer={$cancer diagnosed-cancer}
 
->Recovery # diagnosed-cancer !dying !senior # ~age
+>Recovery # diagnosed-cancer !dying !senior #
 You recover from cancer. $cancer={}
 

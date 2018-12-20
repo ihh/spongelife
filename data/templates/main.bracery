@@ -1,8 +1,8 @@
->Born # root !dead # ~age
+>Born # root !dead #
 ~{born}You are born into &a~decide_class family in ~english_town.
 
->Birthday # minor adult senior # ~age
+>Birthday # minor adult senior #
 ~birthday
 
 >Dead # epitaph # 
-$epitaph
+$footer={}$epitaph

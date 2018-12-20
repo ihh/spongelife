@@ -1,13 +1,13 @@
 
 
->Adopt # thirties forties fifties !unemployed # ~new_child ~age
+>Adopt # thirties forties fifties !unemployed # ~new_child
 You adopt a baby!
 
->Baby # married +fertile # ~new_child ~age
+>Baby # married +fertile # ~new_child
 You have a baby!
 
->Parenting # childcare # ~age
+>Parenting # childcare #
 You parent your ~random_child_age-year-old.
 
->Grown # grownup # ~exit_child ~age
+>Grown # grownup # ~exit_child
 Your child leaves home.

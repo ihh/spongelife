@@ -1,50 +1,50 @@
 
->Dating # single !child +extrovert +open # $status=dating ~age
+>Dating # single !child +extrovert +open # $status=dating
 You go on a date with $lover:={~english_first_name} ~english_last_name.
 
->Single # dating # $status=single ~age
+>Single # dating # $status=single
 Dating bores you.
 
->Relationship # dating +loved # $status=relationship ~age
+>Relationship # dating +loved # $status=relationship
 You're in a relationship with $lover.
 
->Single # relationship +loved # $status=[single|grieving] ~age
+>Single # relationship +loved # $status=[single|grieving]
 You break up with $lover.
 
->Single # relationship -loved # $status=[single|grieving] ~age
+>Single # relationship -loved # $status=[single|grieving]
 $Lover dumps you.
 
->Engaged # relationship !minor +loved # $status=engaged ~age
+>Engaged # relationship !minor +loved # $status=engaged
 You and $lover are engaged to be married!
 
->Single # engaged # $status=single ~age
+>Single # engaged # $status=single
 You break off the engagement with $lover.
 
->Single # engaged -loved # $status=single ~age
+>Single # engaged -loved # $status=single
 $Lover breaks off the engagement.
 
->Married # engaged !unemployed +loved # $status=married ~age
+>Married # engaged !unemployed +loved # $status=married
 Your wedding to $lover is spectacular.
 
->Strife # married !minor # $status=[married|strife] ~age
+>Strife # married !minor # $status=[married|strife]
 You begin an affair with ~english_first_name, &a~human_occupation from ~english_city.
 You argue with $lover.
 
->Reconciled # strife +loved # $status=married ~age
+>Reconciled # strife +loved # $status=married
 You reconcile with $lover.
 
->Divorced # strife # $status=[grieving|single] ~age
+>Divorced # strife # $status=[grieving|single]
 You divorce $lover.
 
->Bereaved # married # $status=grieving ~age
+>Bereaved # married # $status=grieving
 $Lover dies.
 
->Grieving # grieving # $status=single ~age
+>Grieving # grieving # $status=single
 You grieve $lover, and move on.
 
->Single # single grieving !child !senior # $status=celibate ~age
+>Single # single grieving !child !senior # $status=celibate
 You decide [to stay single|not to date] for a while.
 
->Done being single # celibate !senior # $status=single ~age
+>Done being single # celibate !senior # $status=single
 Your [|self-[chosen|enforced|disciplined] ]period of [celibacy|staying single|not dating] is [over|done].[| Time to [date|have some fun|check out the [field|pool]|[get|put yourself] [out there|around|around a bit]].]
 
