@@ -3,7 +3,7 @@
 ~older ~next
 
 >older
-$age=&add{1}$age~age_traits~update_health
+$age=&add{1}$age ~age_traits~update_health
 
 >next
 &if&and$death&geq$age$death{epitaph}~tags

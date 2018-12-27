@@ -1,2 +1,2 @@
 >born
-$footer=&quote{$tags=&eval{$tags ~age}} $status=single $age=0 $cash=0 ~initial_traits
+$footer=&quote{$tags={&eval$tags ~age}} $status=single $age=0 $cash=0 ~initial_traits

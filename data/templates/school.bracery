@@ -5,6 +5,10 @@
 # Synonyms: Imaginative, curious, reflective, creative, sophisticated
 # Antonyms: Unimaginative, uninquisitive, unreflective, uncreative, unsophisticated
 
+>Preschool # +preschool #
+You draw an imaginary world, in crayon.
+Your parent reads to you.
+
 >Painting # +school # ~more_open
 You paint a picture.
 
@@ -102,5 +106,4 @@ A tutor shows up at your house.
 
 >Presentation # +school high # ~more_open ~more_extrovert
 You have to present a slideshow in History. A student falls asleep.
-You present a slideshow in class, the teacher gives you a B+
-
+You present a slideshow in class. The teacher gives you a B+

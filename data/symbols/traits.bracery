@@ -26,9 +26,8 @@ $loved=&math{0.8*$loved}
 >more_hated
 ~less_loved
 
-
 >more_fit
-$fit=&math{0.8*$fit + 0.2}
+&if&lt$age{90}{$fit=&math{0.8*$fit + 0.2}}{}
 
 >less_fit
 $fit=&math{0.8*$fit}
