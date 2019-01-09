@@ -9,11 +9,14 @@
 You draw an imaginary world, in crayon.
 Your parent reads to you.
 
+>>
+Your favorite preschool teacher leaves.
+
 >Painting # +school # ~more_open
 You paint a picture.
 
 >TV # +school !open # ~less_open
-You lack imagination.
+You binge on TV until your eyes twitch and water.
 
 
 # Conscientious (vs Uninhibited)
@@ -84,7 +87,7 @@ You take a trip to the science center. The interactive room at the top is the be
 >Hike # +open +fit +school # ~more_open ~more_fit
 You get taken for a hike in the woods. You fall asleep &if&lt$age{3}{in the baby carrier}{among the trees}.
 
->Divorce # +open child # ~more_open ~more_introvert
+>Divorce # +open child !parents_divorced # ~more_open ~more_introvert &~new_tag{parents_divorced}
 Your parents get divorced. You build a dolls' house in your mom's closet.
 
 >Programming # +open middle high # ~more_open
